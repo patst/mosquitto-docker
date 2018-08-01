@@ -1,10 +1,10 @@
-FROM arm32v7/ubuntu:16:04
+FROM arm32v7/ubuntu:16.04
 
 RUN apt-get update && \
-    install -y python-software-properties && \
+    apt-get install software-properties-common -y && \
     apt-add-repository ppa:mosquitto-dev/mosquitto-ppa && \
     apt-get update && \
-    apt-get install mosquitto && \
+    apt-get install mosquitto -y && \
     mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log
 
 
