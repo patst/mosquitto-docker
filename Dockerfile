@@ -7,5 +7,11 @@ RUN apt-get update && \
     apt-get install mosquitto -y && \
     mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log
 
+ARG USER=mosquitto
+ARG GROUP=mosquitto
+ARG USERID=1000
+ARG GROUPID=1000
+RUN groupadd -g ${GROUPID} ${GROUP} \
+    && useradd -u ${USERID} -g ${GROUPID} -m -s /bin/bash ${USER}
 
 CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
