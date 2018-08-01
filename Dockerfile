@@ -17,5 +17,6 @@ RUN apt-get update && \
 #USER $USER
 
 ADD mosquitto.conf /mosquitto/config/mosquitto.conf
-
+RUN chown -R 106:108 /mosquitto
+USER mosquitto
 CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
