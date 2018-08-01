@@ -14,7 +14,6 @@ services:
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/etc/timezone:/etc/timezone:ro"
-      - "/mnt/kubernetes/certbot:/certs"
       - "/mnt/kubernetes/mosquitto/config:/mosquitto/config"
       - "/mnt/kubernetes/mosquitto/log:/mosquitto/log"
       - "/mnt/kubernetes/mosquitto/data:/mosquitto/data"
