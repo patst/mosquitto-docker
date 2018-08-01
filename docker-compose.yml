@@ -7,7 +7,7 @@ services:
     container_name: mosquitto-server
     restart: always
     ports: 
-      - "10088:8080"
+      - "10088:1883"
     logging:
       options:
         max-size: 1m
