@@ -1,14 +1,17 @@
 FROM arm32v7/ubuntu:16.04
 
+ARG UID=1000
+ARG GID=1000
+
 RUN apt-get update && \
     apt-get install software-properties-common -y && \
     apt-add-repository ppa:mosquitto-dev/mosquitto-ppa && \
-    apt-get update 
-RUN apt-get install mosquitto -y
-RUN mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log && \
+    apt-get update && \
+    apt-get install mosquitto -y && \
+    mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log && \
     cp /etc/mosquitto/mosquitto.conf /mosquitto/config && \
-    usermod -u 1000 mosquitto && \
-    groupmod -g 1000 mosquitto && \
+    usermod -u $UID mosquitto && \
+    groupmod -g $GID mosquitto && \
     chown -R mosquitto:mosquitto /mosquitto
 
 EXPOSE 1883 9001
