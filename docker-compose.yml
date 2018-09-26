@@ -18,5 +18,5 @@ services:
 #      - "./mosquitto/log:/mosquitto/log"
 #      - "./mosquitto/data:/mosquitto/data"
       - "/mnt/kubernetes/mosquitto/config:/mosquitto/config"
-      - "/mnt/kubernetes/mosquitto/log:/mosquitto/log"
+#      - "/mnt/kubernetes/mosquitto/log:/mosquitto/log"
       - "/mnt/kubernetes/mosquitto/data:/mosquitto/data"
