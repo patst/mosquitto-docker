@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:16.04
+FROM arm32v7/ubuntu:18.04
 
 ARG UID=1000
 ARG GID=1000
